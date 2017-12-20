@@ -1,0 +1,44 @@
+﻿<html>
+	<head>
+	<meta charset="utf-8">
+	<title>在线汉字转拼音</title>
+	<script src="js/pinyin.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script type="text/javascript">
+		function copyR() {
+			var Result = document.getElementById('result');
+			Result.select();
+			document.execCommand("Copy");
+
+		}
+		function copyA() {
+			document.getElementById('copyAll').value = document.getElementById('contents').value + document.getElementById('dvd').value +document.getElementById('result').value;
+			copyAll.select();
+			document.execCommand('Copy');
+		}
+	</script>
+	</head>
+	<body id="dummybodyid" style="">
+		<div style = "text-align:center;">
+			请输入您要转换的汉字内容
+			<br>Please enter the Chinese characters you want to translate into pinyin
+			<br>
+			<textarea id="contents" rows="5" cols="80"></textarea>
+			<br>
+				<input id="conv" type="button" value="查拼音 &#13;&#10; Translate into pinyin" onclick="trans();">
+				<input id="copy" type="button" value="复制拼音 &#13;&#10; Copy pinyin" onclick="copyR();">
+				<input id="remove" type="button" value="清空 &#13;&#10; Remove All" onclick="remove();">
+		</div>
+		<div style = "text-align:center;">
+			拼音查询结果<br>
+			Result in Pinyin<br>
+			<textarea id="result" rows="5" cols="80"></textarea>
+		</div>
+		<div style = "text-align:center;">
+			请输入汉字与拼音间的分隔符
+			<textarea id="dvd" rows="1" cols = "2" style="resize:none;"></textarea>
+			<input id="copyA" type="button" value="复制汉字拼音 &#13;&#10; Copy characters and pinyin" onclick="copyA();">
+			<br><textarea overflow=hidden id="copyAll"  value="" rows="5" cols="80" readonly >:</textarea>
+		</div>
+	</body>
+</html>
